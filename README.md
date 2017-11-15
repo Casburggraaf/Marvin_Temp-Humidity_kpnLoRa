@@ -36,7 +36,7 @@ The result is your device EUI.
 
 ### Thirt step: Connect sensor to the Marvin
 
-![marvin setup](marvin_sensor.jpg)
+![marvin setup](../master/images/marvin_sensor.jpg)
 
 Connect the sensor to A3. See the pin overview below to see the available pin numbers.
 

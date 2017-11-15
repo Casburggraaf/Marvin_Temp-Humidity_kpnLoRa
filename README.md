@@ -1,4 +1,4 @@
-# Marvin Temp-Humidity KPNLoRa
+# Marvin Temp-Humidity KPN LoRa
 Sending humidity en temperature data from Marvin through the lora network of KPN (Dutch cellphone compony)
 In this example, I'm receiving this information on a simple php server and will store the data in a database and send it with the use of a telegram bot to a specified user as well
 
@@ -8,39 +8,39 @@ For this to function you need 3 pieces of hardware
 * [A Web-server](https://m.do.co/c/5307d376ecef) - A php server to handle the php post request send by the KPN network. I'm using a ubuntu vps from [DigitalOcean](https://m.do.co/c/5307d376ecef)
 
 Futhermore, you need three pieces of software/accounts
-* [Arduino IDE](https://www.arduino.cc/en/Main/Software) For uploading code to your Marvin
-* [A Account on KPN LORA](https://loradeveloper.mendixcloud.com/login.html) A trail account is available for 90 days
-* [A telegram account](https://telegram.org) For sending telegram message to a user
+* [Arduino IDE](https://www.arduino.cc/en/Main/Software) - For uploading code to your Marvin
+* [A Account on KPN LORA](https://loradeveloper.mendixcloud.com/login.html) - A trail account is available for 90 days
+* [A telegram account](https://telegram.org) - For sending telegram message to a user
 
 ## Installing
 
 ### First step: Installing software
 First of all, clone this repository to a folder
+
 `Git clone https://github.com/Casburggraaf/Marvin_Temp-Humidity_kpnLoRa`
 
 Secondly, install the the Arduino IDE
 Try to upload the first ino "blink.ino" to the Marvin board. For the arduino setting, see the screenshot below (this example is based on a mac configuration)
 
-![Screenshot](../master/images/screenshot_arduino.png)
+![Screenshot](../master/images/screenshot_arduino.png) | width=100
 
 Finally, make a account on [Kpn Lora](https://loradeveloper.mendixcloud.com/login.html)
 
 ### Second step: Getting the keys for the LoRa network
 You need three unique keys that need to be remembered
 * Device EUI - Open the MarvinMultiSerial.ino and upload it to your Marvin. Open the serial monitor and type
-'sys get hweui'
+`sys get hweui`
 The result is your device EUI.
 * Apps Key - This is a random generated key. An example to generate one is:
-'openssl enc -aes-128-cbc -k secret -P -md sha1'
+`openssl enc -aes-128-cbc -k secret -P -md sha1`
 * nwkskey - This key can be obtained by the KPN LoRa portal after entering the two keys above
 
 ### Thirt step: Connect sensor to the Marvin
-
-![marvin setup](../master/images/marvin_sensor.jpg)
+![marvin setup](../master/images/marvin_sensor.jpg) | width=200
 
 Connect the sensor to A3. See the pin overview below to see the available pin numbers.
 
-![marvin pinview](../master/images/marvin_pins.jpeg)
+![marvin pinview](../master/images/marvin_pins.jpeg) | width=200
 
 ### Forth step: Config the marvin
 Open the Temp-Humidity_lora.ino and change the following settings before uploading.
@@ -56,14 +56,14 @@ Follow the remaining steps and write down the name and the api code.
 For more help visit [this link](https://core.telegram.org/bots)
 
 You will also need the chat id, you can obtain this by starting a conversation with "get_id_bot" and type:
-'/start'
+`/start`
 
 ### Sixth Step: Config your server
 First create a database, and make a table with two fields: info and timestamp. Info is a string and timestamp is an automatic field that attaches the date and time when you add an entry to the database.
 Write down the following:
 * Server IP
-* user
-* password
+* User
+* Password
 * Database Name
 
 Open the "recieve.php" and edit these lines

@@ -22,7 +22,7 @@ First of all, clone this repository to a folder
 Secondly, install the the Arduino IDE
 Try to upload the first ino "blink.ino" to the Marvin board. For the arduino setting, see the screenshot below (this example is based on a mac configuration)
 
-![Screenshot](../master/images/screenshot_arduino.png =100x)
+![Screenshot](../master/images/screenshot_arduino.png){width="100px"}
 
 Finally, make a account on [Kpn Lora](https://loradeveloper.mendixcloud.com/login.html)
 
@@ -36,11 +36,11 @@ The result is your device EUI.
 * nwkskey - This key can be obtained by the KPN LoRa portal after entering the two keys above
 
 ### Thirt step: Connect sensor to the Marvin
-![marvin setup](../master/images/marvin_sensor.jpg =200x)
+![marvin setup](../master/images/marvin_sensor.jpg){width="200px"}
 
 Connect the sensor to A3. See the pin overview below to see the available pin numbers.
 
-![marvin pinview](../master/images/marvin_pins.jpeg =200x)
+![marvin pinview](../master/images/marvin_pins.jpeg){width="200px"}
 
 ### Forth step: Config the marvin
 Open the Temp-Humidity_lora.ino and change the following settings before uploading.
